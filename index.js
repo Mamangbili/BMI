@@ -30,13 +30,17 @@ function validateInput({weight,height}){
     return false
 }
 
+function showInvalidInput(){
+    const warning = document.getElementById("result")
+    warning.innerHTML = "Input must be positive and a number!"
+}
+
 btn.addEventListener('click', () => {
     const weight = parseInt(document.getElementById("weight").value)
     const height = parseInt(document.getElementById("height").value)
 
     if(!validateInput({weight,height})){
-        const warning = document.getElementById("result")
-        warning.innerHTML = "Input must be positive and a number!"
+        showInvalidInput()
         return
     }
     
